@@ -1,0 +1,40 @@
+:root {
+    --blue1: #003F88;
+    --blue2: #00296B;
+    --white: #F7F7F7;
+    font-size: 12px;
+}
+
+body {
+    font-family: 'Amiri', serif;
+    overflow-x: hidden;
+    background-color: var(--white);
+    margin-top: 80px; /* Adjust according to navbar height */
+}
+
+.cari-huruf {
+    width: 100%;
+}
+
+.huruf-hijaiyah .huruf {
+    border-radius: 6px;
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, .15);
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue2);
+    background-color: #ffffff;
+}
+
+.huruf-hijaiyah .huruf .arabic {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--blue1);
+}
+
+.huruf-hijaiyah .huruf .latin {
+    font-size: 1.5rem;
+    color: var(--blue2);
+}
