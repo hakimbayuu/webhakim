@@ -32,23 +32,23 @@ $('.kota-pilihan').html(lokasiDefault.name);
 $('.kota-pilihan').attr('data-id-kota', lokasiDefault.id);
 
 $.ajax({
-   url: `https://api.myquran.com/v1/sholat/jadwal/${lokasiDefault.id}/${masehiFullDate}`,
+   url: 'https://api.myquran.com/v2/sholat/jadwal/${lokasiDefault.id}/${masehiFullDate}',
    success: results => {
-      const jadwalSholat = results.data.jadwal;
-      $('.jadwal.imsak .waktu').text(jadwalSholat.imsak)
-      $('.jadwal.subuh .waktu').text(jadwalSholat.subuh)
-      $('.jadwal.terbit .waktu').text(jadwalSholat.terbit)
-      $('.jadwal.dhuha .waktu').text(jadwalSholat.dhuha)
-      $('.jadwal.dzuhur .waktu').text(jadwalSholat.dzuhur)
-      $('.jadwal.ashar .waktu').text(jadwalSholat.ashar)
-      $('.jadwal.maghrib .waktu').text(jadwalSholat.maghrib)
-      $('.jadwal.isya .waktu').text(jadwalSholat.isya)
+      const jadwalsolat = results.data.jadwal;
+      $('.jadwal.imsak .waktu').text(jadwalsolat.imsak)
+      $('.jadwal.subuh .waktu').text(jadwalsolat.subuh)
+      $('.jadwal.terbit .waktu').text(jadwalsolat.terbit)
+      $('.jadwal.dhuha .waktu').text(jadwalsolat.dhuha)
+      $('.jadwal.dzuhur .waktu').text(jadwalsolat.dzuhur)
+      $('.jadwal.ashar .waktu').text(jadwalsolat.ashar)
+      $('.jadwal.maghrib .waktu').text(jadwalsolat.maghrib)
+      $('.jadwal.isya .waktu').text(jadwalsolat.isya)
    }
 });
 
 // Set modal daftar kota
 $.ajax({
-   url: 'https://api.myquran.com/v1/sholat/kota/semua',
+   url: 'https://api.myquran.com/v2/sholat/kota/semua',
    success: results => {
       const daftarKota = results;
       let fragmentDaftarKota = '';
@@ -145,7 +145,7 @@ function gantiJadwalSholatDaerah(idKota, tanggal) {
 
    // Set waktu sholat di kota pilihan
    $.ajax({
-      url: `https://api.myquran.com/v1/sholat/jadwal/${idKota}/${tanggal}`,
+      url: `https://api.myquran.com/v2/sholat/jadwal/${idKota}/${tanggal}`,
       success: results => {
          const jadwalSholat = results.data.jadwal;
          $('.jadwal.imsak .waktu').text(jadwalSholat.imsak)
